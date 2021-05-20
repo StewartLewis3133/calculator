@@ -1,3 +1,32 @@
 h1 {
     color: blue;
 }
+
+#calculator-container {
+    border-style: solid;
+    width: 500px;
+    height: 500px;
+    border-color: red;
+    margin: auto;
+}
+
+#display-containter {
+    border-style: solid;
+    border-color: green;
+    text-align: right;
+}
+
+#button-grid {
+    border-style: solid;
+    border-color: green;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.cell-new {
+    border-style: solid;
+    border-width: 1px;
+    background: rgb(255, 255, 255);
+}
