@@ -2,6 +2,7 @@ const calcNumberButtons = document.querySelectorAll('.number-button');
 const calcOperatorButtons = document.querySelectorAll('.operator-button');
 const calcEqualsButton = document.querySelector('#equals-button');
 const calcClearButton = document.querySelector('#clear-button');
+const calcBackspaceButton = document.querySelector('#backspace')
 let displayText = document.querySelector('#display-container');
 displayText.textContent = '';
 
@@ -16,6 +17,14 @@ calcOperatorButtons.forEach(button => button.addEventListener('click', operatorF
 calcNumberButtons.forEach(button => button.addEventListener('click', display));
 calcEqualsButton.addEventListener('click', finalOperate);
 calcClearButton.addEventListener('click', clearCalculator);
+calcBackspaceButton.addEventListener('click', backspaceClick)
+
+function backspaceClick() {
+    if(displayObject.displayOperator){
+        displayText.textContent = displayObject.secondInputNum
+        displayObject.secondInputNum
+    }
+}
 
 function clearCalculator(){
     displayObject.firstInputNum = '';
@@ -29,7 +38,7 @@ function display(button) {
     let num1 = displayObject.firstInputNum;
     let num2 = displayObject.secondInputNum;
     let nums = num1 + num2;
-    
+
     if(nums.length > 28) {
         return;
     }
@@ -53,7 +62,7 @@ function display(button) {
 
 //Fires on click of operator buttons and concatenates to the display
 function operatorFunction(button) {
-    if(displayObject.displayOperator){
+    if(displayObject.displayOperator || !displayObject.firstInputNum){
         return;
     } else {
     displayText.textContent += " " + button.target.textContent + " ";
