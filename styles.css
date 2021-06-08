@@ -51,13 +51,7 @@ table {
        letter-spacing: -1px; 
        line-height: 1; 
        text-align: center; 
-   
-       /* Position Style */
-       border-style: solid;
        padding: 1rem;
-       border-top: none;
-       border-left: none;
-       border-right: none;
 }
 
 #calculator-container {
@@ -69,6 +63,8 @@ table {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 1rem;
+    background-color: gray;
 }
 
 #display-container {
@@ -81,15 +77,16 @@ table {
     font-size: 30px;
     letter-spacing: -1px; 
     line-height: 1; 
+    background-color: white;
 }
 
 #button-grid {
     border-style: solid;
-    border-color: rgb(0, 0, 0);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
     height: 100%;
+    background-color: pink;
 }
 
 #equals-button {
